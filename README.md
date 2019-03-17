@@ -5,6 +5,6 @@
 
 Make sure the following commands are executed from the root of application directory
 ```
-yarn install
-yarn start
+$ yarn install
+$ yarn start
 ```
