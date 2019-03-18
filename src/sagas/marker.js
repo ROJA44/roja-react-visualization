@@ -5,7 +5,8 @@ import fetch from 'cross-fetch';
 import { toast } from 'react-toastify';
 
 export function* getLOC(action) {
-  for(let index = 0 ; index < 1000000000000000; index++){
+  let index = 0;
+  while(true){
 
     try {
           const response = yield call(fetch, 'https://react-assessment-api.herokuapp.com/api/drone');
@@ -17,6 +18,7 @@ export function* getLOC(action) {
           yield put({ type: UPDATE_COMPLETE, payload: payload })
 
           if(index === 0){
+            index++;
             toast.success("Positioning of drone is started..", {
                 position: toast.POSITION.TOP_CENTER,
                 toastId: 1
